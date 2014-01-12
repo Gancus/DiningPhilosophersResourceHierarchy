@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  * @author Marcin
  */
 public class Philosopher extends Thread {
-    private int id;
+    private final int id;
     private Fork left, right;
     private int eatCouter = 0;
 
@@ -44,10 +44,6 @@ public class Philosopher extends Thread {
                     System.out.println("Przerywanie " + this);
             }
         }
-    }
-    
-    public void test() {
-        System.out.println(this + " left: " + left + " right: " + right);
     }
     
     public void think() throws InterruptedException {
